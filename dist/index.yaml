@@ -36,7 +36,7 @@ paths:
   
 components:
   schemas:
-    $ref: "dist/schemas/index.yaml"
+    $ref: "schemas/index.yaml"
   securitySchemes:
     OAuth2_PIES_Website:
       type: oauth2
