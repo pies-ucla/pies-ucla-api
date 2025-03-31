@@ -7,7 +7,7 @@ get:
         application/json:
           schema:
             type: list
-            $ref: '#/components/schemas/User'
+            $ref: '../schemas/User'
     401:
       description: User is not authenticated via OAuth2 in the web app.
     403:
@@ -17,7 +17,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: '../schemas/Error'
 post:
   summary: Register a User.
   requestBody:
@@ -25,7 +25,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/User'
+          $ref: '../schemas/User'
   responses:
     '201':
       description: Post has been created. No response body provided.
@@ -38,4 +38,4 @@ post:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: '../schemas/Error'

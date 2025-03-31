@@ -1,5 +1,5 @@
 allOf: # Combines the User model and the inline model
-  - $ref: '#/components/schemas/User'
+  - $ref: './User.yaml'
   - type: object
     required:
       - board_member_position

@@ -5,7 +5,7 @@ get:
     in: path
     required: true
     schema:
-      $ref: '#/components/schemas/AlumniId'
+      $ref: '../schemas/AlumniId'
   summary: Read an Alumni member.
   responses:
     '200':
@@ -13,7 +13,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Alumni'
+            $ref: '../schemas/Alumni'
     401:
       description: User is not authenticated via OAuth2 in the web app.
     404:
@@ -21,13 +21,13 @@ get:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: '../schemas/Error'
     500:
       description: Unexpected error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: '../schemas/Error'
 patch:
   parameters:
   - name: alumniId
@@ -35,14 +35,14 @@ patch:
     in: path
     required: true
     schema:
-      $ref: '#/components/schemas/alumniId'
+      $ref: '../schemas/alumniId'
   summary: Update an Alumni member corresponding to `alumniId` based on the fields provided.
   requestBody:
     description: Board member fields to update.
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/Alumni'
+          $ref: '../schemas/Alumni'
   responses:
     '200':
       description: Alumni has been updated with the provided fields.
@@ -55,7 +55,7 @@ patch:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: '../schemas/Error'
 delete:
   parameters:
   - name: alumniId
@@ -63,7 +63,7 @@ delete:
     in: path
     required: true
     schema:
-      $ref: '#/components/schemas/alumniId'
+      $ref: '../schemas/alumniId'
   summary: Delete an Alumni member corresponding to `alumniId`.
   responses:
     '200':
@@ -77,4 +77,4 @@ delete:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: '../schemas/Error'

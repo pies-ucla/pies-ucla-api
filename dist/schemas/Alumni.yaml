@@ -7,7 +7,7 @@ required:
   - created_time
 properties:
   id: # ID is automatically generated
-    $ref: '#/components/schemas/AlumniId'
+    $ref: './AlumniId.yaml'
   first_name:
     type: string
   last_name:

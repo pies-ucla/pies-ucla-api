@@ -13,7 +13,7 @@ get:
   - name: resource_type
     in: query
     schema:
-      $ref: "#/components/schemas/ResourceType"
+      $ref: "../schemas/ResourceType"
     description: The type of resource to collect.
   summary: Read all resources.
   responses:
@@ -23,13 +23,13 @@ get:
         application/json:
           schema:
             type: list
-            $ref: "#/components/schemas/Resource"
+            $ref: "../schemas/Resource"
     500:
       description: Unexpected error
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Error"
+            $ref: "../schemas/Error"
 post:
   summary: Create a Resource.
   requestBody:
@@ -37,7 +37,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/resource"
+          $ref: "../schemas/resource"
   responses:
     '201':
       description: Resource has been created. No response body provided.
@@ -50,4 +50,4 @@ post:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Error"
+            $ref: "../schemas/Error"
