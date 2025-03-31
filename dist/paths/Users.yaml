@@ -1,0 +1,41 @@
+get:
+  summary: Read all users of the PIES website.
+  responses:
+    '200':
+      description: List corresponding to all PIES users.
+      content:
+        application/json:
+          schema:
+            type: list
+            $ref: '#/components/schemas/User'
+    401:
+      description: User is not authenticated via OAuth2 in the web app.
+    403:
+      description: User is not authorized via OAuth2 in the web app. User must be a board member.
+    500:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+post:
+  summary: Register a User.
+  requestBody:
+    description: Required fields to create an User.
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/User'
+  responses:
+    '201':
+      description: Post has been created. No response body provided.
+    401:
+      description: User is not authenticated via OAuth2 in the web app.
+    403:
+      description: User is not authorized via OAuth2 in the web app. User must be a board member.
+    500:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'

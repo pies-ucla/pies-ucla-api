@@ -1,0 +1,34 @@
+type: object
+required:
+  - first_name
+  - last_name
+  - major
+  - subject
+  - position
+  - created_time
+properties:
+  id: # ID is automatically generated
+    $ref: './UserId.yaml'
+  first_name:
+    type: string
+  last_name:
+    type: string
+  major:
+    $ref: "./Major.yaml"
+  minor:
+    $ref: "./Major.yaml"
+  subject:
+    $ref: './SubjectId.yaml'
+  position:
+    type: string
+    enum:
+      - general_member
+      - board_member
+  created_time:
+    type: string
+    format: date-time
+    description: Time of resource creation. Logic should automatically update this field when creating a resource.
+  updated_time:
+    type: string
+    format: date-time
+    description: Time of resource update. Logic should automatically update this field when updating a resource.

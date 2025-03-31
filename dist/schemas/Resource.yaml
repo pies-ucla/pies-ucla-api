@@ -1,0 +1,35 @@
+type: object
+required:
+  - resource_type
+  - title
+  - description
+  - deadline
+  - link
+  - created_by
+  - created_time
+properties:
+  id: # ID is automatically generated
+    $ref: './ResourceId.yaml'
+  resource_type:
+    $ref: './ResourceType.yaml'
+  title:
+    type: string
+  description:
+    type: string
+  deadline:
+    type: string
+    format: date-time
+  link:
+    type: string
+    format: uri
+    description: Link to resource (if applicable).
+  created_by:
+    $ref: './UserId.yaml'
+  created_time:
+    type: string
+    format: date-time
+    description: Time of resource creation. Logic should automatically update this field when creating a resource.
+  updated_time:
+    type: string
+    format: date-time
+    description: Time of resource update. Logic should automatically update this field when updating a resource.

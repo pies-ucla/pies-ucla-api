@@ -1,0 +1,94 @@
+get:
+  parameters:
+  - name: resourceId
+    description: The unique identifier of the Resource.
+    in: path
+    required: true
+    schema:
+      $ref: "#/components/schemas/ResourceId"
+  summary: Read a Resource.
+  responses:
+    '200':
+      description: The Resource corresponding to the provided `resourceId`
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Resource"
+    404:
+      description: No event found for the provided `resourceId`
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    500:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+patch:
+  parameters:
+  - name: resourceId
+    description: The unique identifier of the Resource.
+    in: path
+    required: true
+    schema:
+      $ref: "#/components/schemas/ResourceId"
+  summary: Update a Resource corresponding to `resourceId` based on the fields provided.
+  requestBody:
+    description: Resource fields to update.
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Resource"
+  responses:
+    '200':
+      description: Resource has been updated with the provided fields.
+    401:
+      description: User is not authenticated via OAuth2 in the web app.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    403:
+      description: User is not authorized via OAuth2 in the web app. User must be a Board Member.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    500:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+delete:
+  parameters:
+  - name: resourceId
+    description: The unique identifier of the Resource.
+    in: path
+    required: true
+    schema:
+      $ref: "#/components/schemas/ResourceId"
+  summary: Delete a Resource corresponding to `resourceId`.
+  responses:
+    '200':
+      description: Resource has been deleted.
+    401:
+      description: User is not authenticated via OAuth2 in the web app.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    403:
+      description: User is not authorized via OAuth2 in the web app. User must be a board member.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    500:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"

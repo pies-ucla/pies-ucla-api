@@ -1,0 +1,94 @@
+get:
+  parameters:
+  - name: eventId
+    description: The unique identifier of the Event.
+    in: path
+    required: true
+    schema:
+      $ref: "#/components/schemas/EventId"
+  summary: Read an Event.
+  responses:
+    '200':
+      description: The Event corresponding to the provided `eventId`
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Event"
+    404:
+      description: No event found for the provided `eventId`
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    500:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+patch:
+  parameters:
+  - name: eventId
+    description: The unique identifier of the Event.
+    in: path
+    required: true
+    schema:
+      $ref: "#/components/schemas/ElumniId"
+  summary: Update an Event corresponding to `eventId` based on the fields provided.
+  requestBody:
+    description: Event fields to update.
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Event"
+  responses:
+    '200':
+      description: Event has been updated with the provided fields.
+    401:
+      description: User is not authenticated via OAuth2 in the web app.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    403:
+      description: User is not authorized via OAuth2 in the web app. User must be a Board Member.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    500:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+delete:
+  parameters:
+  - name: eventId
+    description: The unique identifier of the Event.
+    in: path
+    required: true
+    schema:
+      $ref: "#/components/schemas/EventId"
+  summary: Delete an Event corresponding to `eventId`.
+  responses:
+    '200':
+      description: Event has been deleted.
+    401:
+      description: User is not authenticated via OAuth2 in the web app.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    403:
+      description: User is not authorized via OAuth2 in the web app. User must be a board member.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    500:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
