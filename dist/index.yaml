@@ -36,7 +36,34 @@ paths:
   
 components:
   schemas:
-    $ref: "schemas/index.yaml"
+    SubjectId:
+      $ref: "schemas/SubjectId.yaml"
+    UserId:
+      $ref: "schemas/UserId.yaml"
+    User:
+      $ref: "schemas/User.yaml"
+    BoardMember:
+      $ref: "schemas/BoardMember.yaml"
+    BoardMemberPosition:
+      $ref: "schemas/BoardMemberPosition.yaml"
+    EventId:
+      $ref: "schemas/EventId.yaml"
+    Event:
+      $ref: "schemas/Event.yaml"
+    AlumniId:
+      $ref: "schemas/AlumniId.yaml"
+    Alumni:
+      $ref: "schemas/Alumni.yaml"
+    Major:
+      $ref: "schemas/Major.yaml"
+    ResourceId:
+      $ref: "schemas/ResourceId.yaml"
+    ResourceType:
+      $ref: "schemas/ResourceType.yaml"
+    Resource:
+      $ref: "schemas/Resource.yaml"
+    Error:
+      $ref: "schemas/Error.yaml"
   securitySchemes:
     OAuth2_PIES_Website:
       type: oauth2
