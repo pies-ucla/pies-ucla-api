@@ -8,8 +8,6 @@ required:
   - created_by
   - created_time
 properties:
-  id: # ID is automatically generated
-    $ref: './ResourceId.yaml'
   resource_type:
     $ref: './ResourceType.yaml'
   title:
@@ -24,7 +22,11 @@ properties:
     format: uri
     description: Link to resource (if applicable).
   created_by:
-    $ref: './UserId.yaml'
+    type: integer
+    description: ID of the user who created the resource.
+  updated_by:
+    type: integer
+    description: ID of the user who last updated the resource.
   created_time:
     type: string
     format: date-time

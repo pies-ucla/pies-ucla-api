@@ -7,8 +7,6 @@ required:
   - position
   - created_time
 properties:
-  id: # ID is automatically generated
-    $ref: './UserId.yaml'
   first_name:
     type: string
   last_name:
@@ -17,8 +15,6 @@ properties:
     $ref: "./Major.yaml"
   minor:
     $ref: "./Major.yaml"
-  subject:
-    $ref: './SubjectId.yaml'
   position:
     type: string
     enum:

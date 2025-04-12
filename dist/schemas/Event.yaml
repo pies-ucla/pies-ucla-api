@@ -5,14 +5,16 @@ required:
   - created_by
   - created_time
 properties:
-  id: # ID is automatically generated
-    $ref: './EventId.yaml'
   title:
     type: string
   description:
     type: string
   created_by:
-    $ref: './UserId.yaml'
+    type: integer
+    description: ID of the user who created the event.
+  updated_by:
+    type: integer
+    description: ID of the user who last updated the event.
   image:
     type: string
     format: uri

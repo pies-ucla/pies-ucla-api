@@ -6,8 +6,6 @@ required:
   - major
   - created_time
 properties:
-  id: # ID is automatically generated
-    $ref: './AlumniId.yaml'
   first_name:
     type: string
   last_name:
