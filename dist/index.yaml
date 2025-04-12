@@ -32,7 +32,7 @@ paths:
   /resources/{resourceId}:
     $ref: 'paths/Resource.yaml'
   /resources/{resourceId}/picture:
-    $ref: 'paths/resourcePicture.yaml'
+    $ref: 'paths/ResourcePicture.yaml'
   
 components:
   schemas:

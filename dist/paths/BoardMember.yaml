@@ -5,7 +5,7 @@ get:
     in: path
     required: true
     schema:
-      $ref: '../schemas/userId.yaml'
+      $ref: '../schemas/UserId.yaml'
   summary: Read a Board Member.
   responses:
     '200':
@@ -33,7 +33,7 @@ post:
     in: path
     required: true
     schema:
-      $ref: '../schemas/userId.yaml'
+      $ref: '../schemas/UserId.yaml'
   summary: Register a User corresponding to `userId` as a board member.
   requestBody:
     description: Required fields to create a board member.
@@ -63,7 +63,7 @@ patch:
     in: path
     required: true
     schema:
-      $ref: '../schemas/userId.yaml'
+      $ref: '../schemas/UserId.yaml'
   summary: Update a board member corresponding to `userId` based on the fields provided.
   requestBody:
     description: Board member fields to update.

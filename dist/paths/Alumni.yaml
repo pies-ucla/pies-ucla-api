@@ -35,7 +35,7 @@ patch:
     in: path
     required: true
     schema:
-      $ref: '../schemas/alumniId.yaml'
+      $ref: '../schemas/AlumniId.yaml'
   summary: Update an Alumni member corresponding to `alumniId` based on the fields provided.
   requestBody:
     description: Board member fields to update.
@@ -63,7 +63,7 @@ delete:
     in: path
     required: true
     schema:
-      $ref: '../schemas/alumniId.yaml'
+      $ref: '../schemas/AlumniId.yaml'
   summary: Delete an Alumni member corresponding to `alumniId`.
   responses:
     '200':
