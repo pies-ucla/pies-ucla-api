@@ -5,7 +5,7 @@ get:
     in: path
     required: true
     schema:
-      $ref: '../schemas/userId'
+      $ref: '../schemas/userId.yaml'
   summary: Read a Board Member.
   responses:
     '200':
@@ -13,19 +13,19 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../schemas/BoardMember'
+            $ref: '../schemas/BoardMember.yaml'
     404:
       description: No User found for the provided `userId`, or `userId` corresponds to a User who is not a board member.
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error'
+            $ref: '../schemas/Error.yaml'
     500:
       description: Unexpected error
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error'
+            $ref: '../schemas/Error.yaml'
 post:
   parameters:
   - name: userId
@@ -33,14 +33,14 @@ post:
     in: path
     required: true
     schema:
-      $ref: '../schemas/userId'
+      $ref: '../schemas/userId.yaml'
   summary: Register a User corresponding to `userId` as a board member.
   requestBody:
     description: Required fields to create a board member.
     content:
       application/json:
         schema:
-          $ref: '../schemas/BoardMember'
+          $ref: '../schemas/BoardMember.yaml'
   responses:
     '201':
       description: Post has been created. No response body provided.
@@ -55,7 +55,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error'
+            $ref: '../schemas/Error.yaml'
 patch:
   parameters:
   - name: userId
@@ -63,14 +63,14 @@ patch:
     in: path
     required: true
     schema:
-      $ref: '../schemas/userId'
+      $ref: '../schemas/userId.yaml'
   summary: Update a board member corresponding to `userId` based on the fields provided.
   requestBody:
     description: Board member fields to update.
     content:
       application/json:
         schema:
-          $ref: '../schemas/BoardMember'
+          $ref: '../schemas/BoardMember.yaml'
   responses:
     '200':
       description: Event has been updated with the provided fields.
@@ -83,4 +83,4 @@ patch:
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error'
+            $ref: '../schemas/Error.yaml'

@@ -5,7 +5,7 @@ get:
     in: path
     required: true
     schema:
-      $ref: "../schemas/ResourceId"
+      $ref: "../schemas/ResourceId.yaml"
   summary: Read a Resource.
   responses:
     '200':
@@ -13,19 +13,19 @@ get:
       content:
         application/json:
           schema:
-            $ref: "../schemas/Resource"
+            $ref: "../schemas/Resource.yaml"
     404:
       description: No event found for the provided `resourceId`
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
     500:
       description: Unexpected error
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
 patch:
   parameters:
   - name: resourceId
@@ -33,14 +33,14 @@ patch:
     in: path
     required: true
     schema:
-      $ref: "../schemas/ResourceId"
+      $ref: "../schemas/ResourceId.yaml"
   summary: Update a Resource corresponding to `resourceId` based on the fields provided.
   requestBody:
     description: Resource fields to update.
     content:
       application/json:
         schema:
-          $ref: "../schemas/Resource"
+          $ref: "../schemas/Resource.yaml"
   responses:
     '200':
       description: Resource has been updated with the provided fields.
@@ -49,19 +49,19 @@ patch:
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
     403:
       description: User is not authorized via OAuth2 in the web app. User must be a Board Member.
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
     500:
       description: Unexpected error
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
 delete:
   parameters:
   - name: resourceId
@@ -69,7 +69,7 @@ delete:
     in: path
     required: true
     schema:
-      $ref: "../schemas/ResourceId"
+      $ref: "../schemas/ResourceId.yaml"
   summary: Delete a Resource corresponding to `resourceId`.
   responses:
     '200':
@@ -79,16 +79,16 @@ delete:
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
     403:
       description: User is not authorized via OAuth2 in the web app. User must be a board member.
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
     500:
       description: Unexpected error
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"

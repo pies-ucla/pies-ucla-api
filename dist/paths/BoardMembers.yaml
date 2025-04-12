@@ -7,10 +7,10 @@ get:
         application/json:
           schema:
             type: list
-            $ref: '../schemas/BoardMember'
+            $ref: '../schemas/BoardMember.yaml'
     500:
       description: Unexpected error
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error'
+            $ref: '../schemas/Error.yaml'

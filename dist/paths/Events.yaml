@@ -18,13 +18,13 @@ get:
         application/json:
           schema:
             type: list
-            $ref: "../schemas/Event"
+            $ref: "../schemas/Event.yaml"
     500:
       description: Unexpected error
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
 post:
   summary: Create an Event.
   requestBody:
@@ -32,7 +32,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: "../schemas/Event"
+          $ref: "../schemas/Event.yaml"
   responses:
     '201':
       description: Post has been created. No response body provided.
@@ -45,4 +45,4 @@ post:
       content:
         application/json:
           schema:
-            $ref: "../schemas/Error"
+            $ref: "../schemas/Error.yaml"
