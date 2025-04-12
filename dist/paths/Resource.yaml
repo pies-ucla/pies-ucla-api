@@ -5,7 +5,7 @@ get:
     in: path
     required: true
     schema:
-      $ref: "../schemas/ResourceId.yaml"
+      type: integer
   summary: Read a Resource.
   responses:
     '200':
@@ -33,7 +33,7 @@ patch:
     in: path
     required: true
     schema:
-      $ref: "../schemas/ResourceId.yaml"
+      type: integer
   summary: Update a Resource corresponding to `resourceId` based on the fields provided.
   requestBody:
     description: Resource fields to update.
@@ -69,7 +69,7 @@ delete:
     in: path
     required: true
     schema:
-      $ref: "../schemas/ResourceId.yaml"
+      type: integer
   summary: Delete a Resource corresponding to `resourceId`.
   responses:
     '200':

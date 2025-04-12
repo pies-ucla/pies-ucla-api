@@ -5,7 +5,7 @@ get:
     in: path
     required: true
     schema:
-      $ref: '../schemas/AlumniId.yaml'
+      type: integer
   summary: Read an Alumni member.
   responses:
     '200':
@@ -35,7 +35,7 @@ patch:
     in: path
     required: true
     schema:
-      $ref: '../schemas/AlumniId.yaml'
+      type: integer
   summary: Update an Alumni member corresponding to `alumniId` based on the fields provided.
   requestBody:
     description: Board member fields to update.
@@ -63,7 +63,7 @@ delete:
     in: path
     required: true
     schema:
-      $ref: '../schemas/AlumniId.yaml'
+      type: integer
   summary: Delete an Alumni member corresponding to `alumniId`.
   responses:
     '200':

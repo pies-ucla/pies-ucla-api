@@ -5,7 +5,7 @@ get:
     in: path
     required: true
     schema:
-      $ref: '../schemas/UserId.yaml'
+      type: integer
   summary: Read a User.
   responses:
     '200':
@@ -33,7 +33,7 @@ patch:
     in: path
     required: true
     schema:
-      $ref: '../schemas/UserId.yaml'
+      type: integer
   summary: Update a user corresponding to `userId` based on the fields provided.
   requestBody:
     description: User fields to update.
@@ -61,7 +61,7 @@ delete:
     in: path
     required: true
     schema:
-      $ref: '../schemas/UserId.yaml'
+      type: integer
   summary: Delete a user corresponding to `userId`.
   responses:
     '200':

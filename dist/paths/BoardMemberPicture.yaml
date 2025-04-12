@@ -7,7 +7,7 @@ post:
       in: path
       required: true
       schema:
-        type: string
+        type: integer
   requestBody:
     required: true
     content:
